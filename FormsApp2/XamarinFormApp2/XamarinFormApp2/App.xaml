@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinFormApp2.App"
+             xmlns:local="clr-namespace:XamarinFormApp2;assembly=XamarinFormApp2">
+  <Application.Resources>
+    <ResourceDictionary>
+
+      <local:ServiceLocator x:Key="ServiceLocator" />
+
+
+      <Style x:Key="labelStyle" TargetType="Label">
+        <Setter Property="TextColor" Value="Green" />
+      </Style>
+    </ResourceDictionary>
+  </Application.Resources>
+</Application>
