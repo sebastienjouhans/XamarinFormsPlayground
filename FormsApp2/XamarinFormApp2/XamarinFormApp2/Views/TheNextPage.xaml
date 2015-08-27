@@ -12,6 +12,8 @@
     </b:BehaviorCollection>
   </b:Interaction.Behaviors>
   <StackLayout>
+   <Label Text="{Binding TextFromPreviousPage}" Style="{StaticResource labelStyle}"/>
+    
     <Button
       Text="Go to Master Details"
       TextColor="#0000ff"

@@ -17,6 +17,8 @@
 
         private bool initialise = false;
 
+        private string textFromPreviousPage;
+
         public TheNextViewModel(INavigationService navigationService)
         {
             this.navigationService = navigationService;
@@ -48,6 +50,19 @@
             }
         }
 
+        public string TextFromPreviousPage
+        {
+            get
+            {
+                return this.textFromPreviousPage;
+            }
+
+            private set
+            {
+                this.Set(() => this.TextFromPreviousPage, ref this.textFromPreviousPage, value);
+            }
+        }
+
         public override void Dispose()
         {
         }
@@ -70,6 +85,8 @@
         private void Initialise()
         {
             this.initialise = true;
+
+            this.TextFromPreviousPage = ((TheNextPageViewArgs)this.ViewArgs).SomeImpotantParameter;
         }
 
         private async Task MasterDetailsAsync()

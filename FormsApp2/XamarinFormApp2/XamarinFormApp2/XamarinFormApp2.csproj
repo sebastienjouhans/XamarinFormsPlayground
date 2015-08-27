@@ -41,7 +41,6 @@
     <Compile Include="Commands\DelegateCommandBase.cs" />
     <Compile Include="Commands\IActiveAware.cs" />
     <Compile Include="Commons\JsonSerializer.cs" />
-    <Compile Include="Commons\NamedColor.cs" />
     <Compile Include="Commons\PageType.cs" />
     <Compile Include="Commons\TheNextPageViewArgs.cs" />
     <Compile Include="Commons\ViewArgs.cs" />
@@ -59,10 +58,6 @@
     <Compile Include="Services\NavigationService.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="Commons\ObservableObject.cs" />
-    <Compile Include="Views\MasterDetailPageDemoPage.xaml.cs">
-      <DependentUpon>MasterDetailPageDemoPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\NamedColorPage.cs" />
     <Compile Include="Views\TheNextPage.xaml.cs">
       <DependentUpon>TheNextPage.xaml</DependentUpon>
     </Compile>
@@ -111,12 +106,6 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\TheNextPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Views\MasterDetailPageDemoPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
