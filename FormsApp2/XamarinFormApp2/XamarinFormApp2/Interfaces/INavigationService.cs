@@ -9,18 +9,22 @@
 
     public interface INavigationService
     {
-        Task NavigateTo(ViewDescriptor viewDescriptor);
+        Task NavigateToAsync(ViewDescriptor viewDescriptor);
 
-        Task NavigateTo(ViewDescriptor viewDescriptor, bool animated);
+        Task NavigateToAsync(ViewDescriptor viewDescriptor, bool animated);
 
-        Task<Page> GoBack();
+        Task<Page> GoBackAsync();
 
-        Task<Page> GoBack(bool animated);
+        Task<Page> GoBackAsync(bool animated);
 
         void RemovePage(Page page);
 
         ViewDescriptor GetTheNextPageViewDescriptor(ViewArgs viewArgs);
 
         ViewDescriptor GetMasterDetailsViewDescriptor();
+
+        Task PushModalAsync(Page page, bool animated);
+
+        Task PushModalAsync(Page page);
     }
 }

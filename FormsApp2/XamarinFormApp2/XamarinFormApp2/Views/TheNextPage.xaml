@@ -2,7 +2,15 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XamarinFormApp2.Views.TheNextPage"
-             BindingContext="{Binding Path=TheNextViewModel, Source={StaticResource ServiceLocator}}">
+             xmlns:b="clr-namespace:Xamarin.Behaviors;assembly=Xamarin.Behaviors">
+
+  <!--BindingContext="{Binding Path=TheNextViewModel, Source={StaticResource ServiceLocator}}"-->
+  <b:Interaction.Behaviors>
+    <b:BehaviorCollection>
+      <b:EventToCommand EventName="Appearing"  Command="{Binding OnAppearingCommand}" />
+      <b:EventToCommand EventName="Disappearing"  Command="{Binding OnDisappearingCommand}" />
+    </b:BehaviorCollection>
+  </b:Interaction.Behaviors>
   <StackLayout>
     <Button
       Text="Go to Master Details"
@@ -12,5 +20,9 @@
       BorderRadius="10"
       BorderWidth="10"
       Command="{Binding MasterDetailsCommand}"/>
+
+    <Button
+      Text="Display Alert"
+      Command="{Binding DisplayAlertCommand}"/>
   </StackLayout>
 </ContentPage>

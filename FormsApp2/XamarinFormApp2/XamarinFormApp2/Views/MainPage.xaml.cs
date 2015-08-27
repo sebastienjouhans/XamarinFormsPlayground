@@ -13,6 +13,8 @@ namespace XamarinFormApp2.Views
         public MainPage()
         {
             InitializeComponent();
+
+            this.BindingContext = ((ServiceLocator)Application.Current.Resources["ServiceLocator"]).MainViewModel;
         }
     }
 }

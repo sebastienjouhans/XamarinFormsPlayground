@@ -39,12 +39,12 @@ namespace XamarinFormApp2.Services
             this.Navigation.InsertPageBefore(page, before);
         }
 
-        public async Task NavigateTo(ViewDescriptor viewDescriptor)
+        public async Task NavigateToAsync(ViewDescriptor viewDescriptor)
         {
-            await this.NavigateTo(viewDescriptor, false);
+            await this.NavigateToAsync(viewDescriptor, false);
         }
 
-        public async Task NavigateTo(ViewDescriptor viewDescriptor, bool animated)
+        public async Task NavigateToAsync(ViewDescriptor viewDescriptor, bool animated)
         {
             var pageName = viewDescriptor.PageType.ToString();
             var type = Type.GetType(string.Format(PathTemplate, pageName));
@@ -60,14 +60,24 @@ namespace XamarinFormApp2.Services
             await this.Navigation.PushAsync(page, animated);
         }
 
-        public async Task<Page> GoBack()
+        public async Task<Page> GoBackAsync()
         {
-            return await this.GoBack(false);
+            return await this.GoBackAsync(false);
         }
 
-        public async Task<Page> GoBack(bool animated)
+        public async Task<Page> GoBackAsync(bool animated)
         {
             return await this.Navigation.PopAsync(animated);
+        }
+
+        public async Task PushModalAsync(Page page)
+        {
+            await this.PushModalAsync(page, false);
+        }
+
+        public async Task PushModalAsync(Page page, bool animated)
+        {
+            this.Navigation.PushModalAsync(page, animated);
         }
 
         

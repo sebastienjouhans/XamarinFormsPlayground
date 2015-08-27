@@ -12,5 +12,11 @@ namespace XamarinFormApp2.ViewModels
     public abstract class ViewModelBase : ObservableObject, IViewModel
     {
         public ViewArgs ViewArgs { get; set; }
+
+        public abstract void Dispose();
+
+        protected abstract void OnAppearing();
+
+        protected abstract void OnDisappearing();
     }
 }

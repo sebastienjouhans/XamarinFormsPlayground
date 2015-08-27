@@ -44,6 +44,18 @@
             }
         }
 
+        public override void Dispose()
+        {
+        }
+
+        protected override void OnAppearing()
+        {
+        }
+
+        protected override void OnDisappearing()
+        {
+        }
+
         private void Click()
         {
             this.Name = string.Format("Clicked {0} times", this.counter);
@@ -52,7 +64,7 @@
 
         private async Task NextPageAsync()
         {
-            await this.navigationService.NavigateTo(this.navigationService.GetTheNextPageViewDescriptor(new TheNextPageViewArgs { SomeImpotantParameter = "this a passed viewargs" }));
+            await this.navigationService.NavigateToAsync(this.navigationService.GetTheNextPageViewDescriptor(new TheNextPageViewArgs { SomeImpotantParameter = "this a passed viewargs" }));
         }
     }
 }

@@ -8,11 +8,15 @@ using Xamarin.Forms;
 
 namespace XamarinFormApp2.Views
 {
+    using XamarinFormApp2.ViewModels;
+
     public partial class TheNextPage : ContentPage
     {
         public TheNextPage()
         {
-            InitializeComponent();
+            this.InitializeComponent();
+
+            this.BindingContext = ((ServiceLocator)Application.Current.Resources["ServiceLocator"]).TheNextViewModel;
         }
     }
 }
