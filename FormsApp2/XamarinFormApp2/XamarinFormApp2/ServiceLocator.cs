@@ -31,7 +31,13 @@ namespace XamarinFormApp2
         public TheNextViewModel TheNextViewModel
         {
             get { return this.globalContainer.Resolve<TheNextViewModel>(); }
+        }
+
+        public ListPageViewModel ListPageViewModel
+        {
+            get { return this.globalContainer.Resolve<ListPageViewModel>(); }
         } 
+        
 
         public void Initialize()
         {
@@ -40,6 +46,7 @@ namespace XamarinFormApp2
         private void RegisterServices(IUnityContainer container)
         {
             container.RegisterType<IJsonSerializer, JsonSerializer>(new ContainerControlledLifetimeManager());
+            container.RegisterType<ICommunicationService, CommunicationService>(new ContainerControlledLifetimeManager());
             container.RegisterType<INavigationService, NavigationService>(new ContainerControlledLifetimeManager(), new InjectionConstructor(Application.Current));
         }
         
@@ -47,6 +54,7 @@ namespace XamarinFormApp2
         {
             container.RegisterType<MainViewModel, MainViewModel>();
             container.RegisterType<TheNextViewModel, TheNextViewModel>();
+            container.RegisterType<ListPageViewModel, ListPageViewModel>();
         }
 
     }

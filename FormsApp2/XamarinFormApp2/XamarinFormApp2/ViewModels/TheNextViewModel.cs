@@ -22,8 +22,10 @@
         public TheNextViewModel(INavigationService navigationService)
         {
             this.navigationService = navigationService;
-            this.MasterDetailsCommand = new DelegateCommand(async () => await this.MasterDetailsAsync());
+            this.ThreeDTextCommand = new DelegateCommand(async () => await this.ThreeDTextAsync());
             this.DisplayAlertCommand = new DelegateCommand(this.DisplayAlert);
+            this.ThreeDTextCommand = new DelegateCommand(async () => await this.ThreeDTextAsync());
+            this.ListViewCommand = new DelegateCommand(async () => await this.ListViewAsync());
 
             this.OnAppearingCommand = new DelegateCommand(this.OnAppearing);
             this.OnDisappearingCommand = new DelegateCommand(this.OnDisappearing);
@@ -36,6 +38,10 @@
         public ICommand OnAppearingCommand { get; private set; }
 
         public ICommand OnDisappearingCommand { get; private set; }
+
+        public ICommand ThreeDTextCommand { get; set; }
+
+        public ICommand ListViewCommand { get; set; }
 
         public string Name
         {
@@ -67,7 +73,7 @@
         {
         }
 
-        protected override void OnAppearing()
+        private void OnAppearing()
         {
             if (this.initialise)
             {
@@ -77,7 +83,7 @@
             this.Initialise();
         }
 
-        protected override void OnDisappearing()
+        private void OnDisappearing()
         {
             this.Dispose();
         }
@@ -89,14 +95,19 @@
             this.TextFromPreviousPage = ((TheNextPageViewArgs)this.ViewArgs).SomeImpotantParameter;
         }
 
-        private async Task MasterDetailsAsync()
-        {
-            await this.navigationService.NavigateToAsync(this.navigationService.GetMasterDetailsViewDescriptor());
-        }
-
         private void DisplayAlert()
         {
             this.navigationService.PushModalAsync(new MainPage());
+        }
+
+        private async Task ThreeDTextAsync()
+        {
+            await this.navigationService.NavigateToAsync(this.navigationService.GetThreeDTextViewDescriptor()).ConfigureAwait(false);
+        }
+
+        private async Task ListViewAsync()
+        {
+            await this.navigationService.NavigateToAsync(this.navigationService.GetListPageViewDescriptor()).ConfigureAwait(false);
         }
     }
 }

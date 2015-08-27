@@ -48,14 +48,6 @@
         {
         }
 
-        protected override void OnAppearing()
-        {
-        }
-
-        protected override void OnDisappearing()
-        {
-        }
-
         private void Click()
         {
             this.Name = string.Format("Clicked {0} times", this.counter);

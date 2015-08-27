@@ -13,18 +13,17 @@
   </b:Interaction.Behaviors>
   <StackLayout>
    <Label Text="{Binding TextFromPreviousPage}" Style="{StaticResource labelStyle}"/>
-    
-    <Button
-      Text="Go to Master Details"
-      TextColor="#0000ff"
-      Image="AppbarIconSave.png"
-      BorderColor="#ffffff"
-      BorderRadius="10"
-      BorderWidth="10"
-      Command="{Binding MasterDetailsCommand}"/>
 
     <Button
       Text="Display Alert"
       Command="{Binding DisplayAlertCommand}"/>
+
+    <Button
+      Text="3d text"
+      Command="{Binding ThreeDTextCommand}"/>
+
+    <Button
+      Text="list view with comm service"
+      Command="{Binding ListViewCommand}"/>
   </StackLayout>
 </ContentPage>

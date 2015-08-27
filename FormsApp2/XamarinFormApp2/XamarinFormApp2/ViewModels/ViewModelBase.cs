@@ -14,9 +14,5 @@ namespace XamarinFormApp2.ViewModels
         public ViewArgs ViewArgs { get; set; }
 
         public abstract void Dispose();
-
-        protected abstract void OnAppearing();
-
-        protected abstract void OnDisappearing();
     }
 }

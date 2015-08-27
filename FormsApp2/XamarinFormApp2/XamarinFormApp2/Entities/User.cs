@@ -1,0 +1,15 @@
+﻿namespace XamarinFormApp2.Entities
+{
+    using Newtonsoft.Json;
+
+    public class User
+    {
+
+        [JsonProperty(PropertyName = "name")]
+        public string Name { get; set; }
+
+
+        [JsonProperty(PropertyName = "age")]
+        public int Age { get; set; }
+    }
+}

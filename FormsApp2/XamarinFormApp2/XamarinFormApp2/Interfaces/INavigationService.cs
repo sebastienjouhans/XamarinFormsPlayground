@@ -18,13 +18,16 @@
         Task<Page> GoBackAsync(bool animated);
 
         void RemovePage(Page page);
-
-        ViewDescriptor GetTheNextPageViewDescriptor(ViewArgs viewArgs);
-
-        ViewDescriptor GetMasterDetailsViewDescriptor();
-
+        
         Task PushModalAsync(Page page, bool animated);
 
         Task PushModalAsync(Page page);
+
+        ViewDescriptor GetTheNextPageViewDescriptor(ViewArgs viewArgs);
+
+        ViewDescriptor GetThreeDTextViewDescriptor();
+
+        ViewDescriptor GetListPageViewDescriptor();
+
     }
 }

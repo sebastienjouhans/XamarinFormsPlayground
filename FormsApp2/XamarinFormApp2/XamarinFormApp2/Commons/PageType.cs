@@ -4,6 +4,7 @@
     {
         MainPage,
         TheNextPage,
-        MasterDetailPageDemoPage,
+        ThreeDTextPage,
+        ListPage,
     }
 }
