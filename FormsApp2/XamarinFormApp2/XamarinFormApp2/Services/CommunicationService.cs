@@ -33,8 +33,6 @@
 
         public async Task<NetworkResponse<TestData>> GetTestDataAsync()
         {
-            ////return await Task.FromResult(this.GetSuccessfulNetworkResponse<IList<SavedOffer>>(new List<SavedOffer>()));
-            ////return await Task.FromResult(this.GetSavedOffersMockData());
 
             var requestUri =
                 new Uri("http://www.mocky.io/v2/55e033ebb4993140018440a1");
