@@ -6,9 +6,12 @@ using System.Threading.Tasks;
 
 namespace XamarinFormApp2.ViewModels
 {
+    using System.Diagnostics;
     using System.Windows.Input;
 
     using Microsoft.Practices.Prism.Commands;
+
+    using Xamarin.Forms;
 
     using XamarinFormApp2.Entities;
     using XamarinFormApp2.Interfaces;
@@ -19,16 +22,22 @@ namespace XamarinFormApp2.ViewModels
 
         private TestData listViewData;
 
+        private List<User> usersData;
+
         public ListPageViewModel(ICommunicationService communicationService)
         {
             this.communicationService = communicationService;
 
             this.OnAppearingCommand = new DelegateCommand(async () => await this.OnAppearingAsync());
+
+            this.ItemSelectedCommand = new DelegateCommand<SelectedItemChangedEventArgs>(this.ItemSelected);
         }
 
         public ICommand OnAppearingCommand { get; private set; }
 
         public ICommand OnDisappearingCommand { get; private set; }
+
+        public ICommand ItemSelectedCommand { get; private set; }
 
         public TestData ListViewData
         {
@@ -40,6 +49,19 @@ namespace XamarinFormApp2.ViewModels
             private set
             {
                 this.Set(() => this.ListViewData, ref this.listViewData, value);
+            }
+        }
+
+        public List<User> UsersData
+        {
+            get
+            {
+                return this.usersData;
+            }
+
+            private set
+            {
+                this.Set(() => this.UsersData, ref this.usersData, value);
             }
         }
 
@@ -57,6 +79,13 @@ namespace XamarinFormApp2.ViewModels
             }
 
             this.ListViewData = result.Response;
+
+            this.UsersData = this.ListViewData.Users;
+        }
+
+        private void ItemSelected(SelectedItemChangedEventArgs e)
+        {
+            Debug.WriteLine((e.SelectedItem as User).Name);
         }
     }
 }

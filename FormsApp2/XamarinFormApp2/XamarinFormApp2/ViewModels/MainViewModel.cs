@@ -25,11 +25,18 @@
             this.NextPageCommand = new DelegateCommand(async () => await this.NextPageAsync());
 
             this.Name = @"this will be updated";
+
+            this.OnAppearingCommand = new DelegateCommand(this.OnAppearing);
+            this.OnDisappearingCommand = new DelegateCommand(this.OnDisappearing);
         }
 
         public ICommand ClickCommand { get; private set; }
 
         public ICommand NextPageCommand { get; private set; }
+
+        public ICommand OnAppearingCommand { get; private set; }
+
+        public ICommand OnDisappearingCommand { get; private set; }
 
         public string Name
         {
@@ -46,6 +53,15 @@
 
         public override void Dispose()
         {
+        }
+
+        private void OnAppearing()
+        {
+        }
+
+        private void OnDisappearing()
+        {
+            this.Dispose();
         }
 
         private void Click()

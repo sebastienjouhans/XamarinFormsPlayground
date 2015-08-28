@@ -37,7 +37,7 @@
             ////return await Task.FromResult(this.GetSavedOffersMockData());
 
             var requestUri =
-                new Uri("http://demo6433261.mockable.io/test");
+                new Uri("http://www.mocky.io/v2/55e033ebb4993140018440a1");
 
             var request = this.GetPriorityMomentsRequest(HttpMethod.Get, requestUri);
 

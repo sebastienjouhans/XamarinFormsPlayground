@@ -12,7 +12,7 @@ namespace XamarinFormApp2.Views
     {
         public ListPage()
         {
-            InitializeComponent();
+            this.InitializeComponent();
 
             this.BindingContext = ((ServiceLocator)Application.Current.Resources["ServiceLocator"]).ListPageViewModel;
         }

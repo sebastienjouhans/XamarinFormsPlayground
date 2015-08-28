@@ -10,7 +10,7 @@
         [JsonProperty(PropertyName = "users")]
         public List<User> Users { get; set; }
 
-        [JsonProperty(PropertyName = "Countries")]
+        [JsonProperty(PropertyName = "countries")]
         public List<Country> Countries { get; set; }
     }
 }

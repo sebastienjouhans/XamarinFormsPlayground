@@ -1,8 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="XamarinFormApp2.Views.MainPage">
-  <!--BindingContext="{Binding Path=MainViewModel, Source={StaticResource ServiceLocator}}"-->
+             x:Class="XamarinFormApp2.Views.MainPage"
+             xmlns:b="clr-namespace:Xamarin.Behaviors;assembly=Xamarin.Behaviors"
+             >
+  <!--
+  xmlns:root="clr-namespace:XamarinFormApp2;assembly=XamarinFormApp2"
+             BindingContext="{root:ServiceLocator MainViewModel}"
+             
+  BindingContext="{Binding Path=MainViewModel, Source={StaticResource ServiceLocator}}"-->
+
+  <b:Interaction.Behaviors>
+    <b:BehaviorCollection>
+      <b:EventToCommand EventName="Appearing"  Command="{Binding OnAppearingCommand}" />
+      <b:EventToCommand EventName="Disappearing"  Command="{Binding OnDisappearingCommand}" />
+    </b:BehaviorCollection>
+  </b:Interaction.Behaviors>
 
   <ContentPage.Padding>
     <OnPlatform x:TypeArguments="Thickness">

@@ -1,9 +1,13 @@
 ﻿
 namespace XamarinFormApp2
 {
+    using System;
+    using System.Reflection;
+
     using Microsoft.Practices.Unity;
 
     using Xamarin.Forms;
+    using Xamarin.Forms.Xaml;
 
     using XamarinFormApp2.Commons;
     using XamarinFormApp2.Interfaces;
@@ -57,5 +61,23 @@ namespace XamarinFormApp2
             container.RegisterType<ListPageViewModel, ListPageViewModel>();
         }
 
+    }
+
+
+    /// <remark>
+    /// http://forums.xamarin.com/discussion/comment/149298#Comment_149298    
+    /// this is because we are instanciating the view model in the view xaml
+    /// there is no one time only binding in xamarin forms
+    /// </remark>
+    [ContentProperty("Member")]
+    public class ServiceLocatorExtension : IMarkupExtension
+    {
+        public string Member { get; set; }
+
+        public object ProvideValue(IServiceProvider serviceProvider)
+        {
+            object locator = Application.Current.Resources["ServiceLocator"];
+            return locator.GetType().GetRuntimeProperty(this.Member).GetValue(locator);
+        }
     }
 }
