@@ -13,7 +13,8 @@
 
   <ListView
     x:Name="MyListView"
-    ItemsSource="{Binding UsersData}">
+    ItemsSource="{Binding UsersData}"
+    HasUnevenRows="True">
     <b:Interaction.Behaviors>
       <b:BehaviorCollection>
         <behaviors:OnCommandSelectedItemListViewBehavior Command="{Binding ItemSelectedCommand}" />
@@ -37,7 +38,7 @@
               </OnPlatform>
             </StackLayout.Padding>
             <Label Text="{Binding Name}" YAlign="Center" TextColor="Green" />
-            <Label Text="{Binding Age}" YAlign="Center" TextColor="#ff0012" />
+            <Label Text="{Binding Age}" YAlign="Start" TextColor="#ff0012" />
           </StackLayout>
         </ViewCell>
       </DataTemplate>
