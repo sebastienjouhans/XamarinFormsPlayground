@@ -12,7 +12,6 @@ Testing Xamarin Forms
 * list view
 * custom behaviors
 * bindable property (in behavior)
+* custom control with bindable property
+* added message box service for message alerts
 
-##### coming soon
- * custom control with bindable property
- * page with xamarin controls
