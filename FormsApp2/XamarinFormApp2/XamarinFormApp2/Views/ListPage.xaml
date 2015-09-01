@@ -7,7 +7,7 @@
   
   <b:Interaction.Behaviors>
     <b:BehaviorCollection>
-      <b:EventToCommand EventName="Appearing"  Command="{Binding OnAppearingCommand}" />
+      <b:EventToCommand EventName="Appearing"  Command="{Binding AppearingCommand}" />
     </b:BehaviorCollection>
   </b:Interaction.Behaviors>
 

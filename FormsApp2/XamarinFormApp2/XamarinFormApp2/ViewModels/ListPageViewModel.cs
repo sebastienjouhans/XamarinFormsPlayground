@@ -28,14 +28,12 @@ namespace XamarinFormApp2.ViewModels
         {
             this.communicationService = communicationService;
 
-            this.OnAppearingCommand = new DelegateCommand(async () => await this.OnAppearingAsync());
+            this.AppearingCommand = new DelegateCommand(async () => await this.AppearingAsync());
 
             this.ItemSelectedCommand = new DelegateCommand<SelectedItemChangedEventArgs>(this.ItemSelected);
         }
 
-        public ICommand OnAppearingCommand { get; private set; }
-
-        public ICommand OnDisappearingCommand { get; private set; }
+        public ICommand AppearingCommand { get; private set; }
 
         public ICommand ItemSelectedCommand { get; private set; }
 
@@ -69,7 +67,7 @@ namespace XamarinFormApp2.ViewModels
         {
         }
 
-        private async Task OnAppearingAsync()
+        private async Task AppearingAsync()
         {
             var result = await this.communicationService.GetTestDataAsync().ConfigureAwait(false);
 

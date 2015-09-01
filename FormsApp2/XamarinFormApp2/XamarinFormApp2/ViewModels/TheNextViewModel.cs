@@ -27,17 +27,17 @@
             this.ThreeDTextCommand = new DelegateCommand(async () => await this.ThreeDTextAsync());
             this.ListViewCommand = new DelegateCommand(async () => await this.ListViewAsync());
 
-            this.OnAppearingCommand = new DelegateCommand(this.OnAppearing);
-            this.OnDisappearingCommand = new DelegateCommand(this.OnDisappearing);
+            this.AppearingCommand = new DelegateCommand(this.Appearing);
+            this.DisappearingCommand = new DelegateCommand(this.Disappearing);
         }
 
         public ICommand MasterDetailsCommand { get; private set; }
 
         public ICommand DisplayAlertCommand { get; private set; }
 
-        public ICommand OnAppearingCommand { get; private set; }
+        public ICommand AppearingCommand { get; private set; }
 
-        public ICommand OnDisappearingCommand { get; private set; }
+        public ICommand DisappearingCommand { get; private set; }
 
         public ICommand ThreeDTextCommand { get; set; }
 
@@ -73,7 +73,7 @@
         {
         }
 
-        private void OnAppearing()
+        private void Appearing()
         {
             if (this.initialise)
             {
@@ -83,7 +83,7 @@
             this.Initialise();
         }
 
-        private void OnDisappearing()
+        private void Disappearing()
         {
             this.Dispose();
         }

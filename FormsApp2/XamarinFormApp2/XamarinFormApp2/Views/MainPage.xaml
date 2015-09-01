@@ -12,8 +12,8 @@
 
   <b:Interaction.Behaviors>
     <b:BehaviorCollection>
-      <b:EventToCommand EventName="Appearing"  Command="{Binding OnAppearingCommand}" />
-      <b:EventToCommand EventName="Disappearing"  Command="{Binding OnDisappearingCommand}" />
+      <b:EventToCommand EventName="Appearing"  Command="{Binding AppearingCommand}" />
+      <b:EventToCommand EventName="Disappearing"  Command="{Binding DisappearingCommand}" />
     </b:BehaviorCollection>
   </b:Interaction.Behaviors>
 

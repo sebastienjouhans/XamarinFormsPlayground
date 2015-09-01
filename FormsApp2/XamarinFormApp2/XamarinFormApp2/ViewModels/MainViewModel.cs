@@ -26,17 +26,17 @@
 
             this.Name = @"this will be updated";
 
-            this.OnAppearingCommand = new DelegateCommand(this.OnAppearing);
-            this.OnDisappearingCommand = new DelegateCommand(this.OnDisappearing);
+            this.AppearingCommand = new DelegateCommand(this.Appearing);
+            this.DisappearingCommand = new DelegateCommand(this.Disappearing);
         }
 
         public ICommand ClickCommand { get; private set; }
 
         public ICommand NextPageCommand { get; private set; }
 
-        public ICommand OnAppearingCommand { get; private set; }
+        public ICommand AppearingCommand { get; private set; }
 
-        public ICommand OnDisappearingCommand { get; private set; }
+        public ICommand DisappearingCommand { get; private set; }
 
         public string Name
         {
@@ -55,11 +55,11 @@
         {
         }
 
-        private void OnAppearing()
+        private void Appearing()
         {
         }
 
-        private void OnDisappearing()
+        private void Disappearing()
         {
             this.Dispose();
         }
