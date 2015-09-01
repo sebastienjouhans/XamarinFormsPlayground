@@ -35,6 +35,9 @@
                     this.TheNewTextForCustomControl = "this is the new text";
                 });
 
+
+            this.TheNewTextForCustomControl = "default text - this will update";
+
             this.AppearingCommand = new DelegateCommand(this.Appearing);
             this.DisappearingCommand = new DelegateCommand(this.Disappearing);
         }
