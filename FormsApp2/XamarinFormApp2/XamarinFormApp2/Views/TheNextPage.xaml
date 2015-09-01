@@ -11,6 +11,7 @@
       <b:EventToCommand EventName="Disappearing"  Command="{Binding OnDisappearingCommand}" />
     </b:BehaviorCollection>
   </b:Interaction.Behaviors>
+  
   <StackLayout>
    <Label Text="{Binding TextFromPreviousPage}" Style="{StaticResource labelStyle}"/>
 

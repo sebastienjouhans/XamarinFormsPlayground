@@ -14,14 +14,11 @@
   <ListView
     x:Name="MyListView"
     ItemsSource="{Binding UsersData}">
-
     <b:Interaction.Behaviors>
       <b:BehaviorCollection>
         <behaviors:OnCommandSelectedItemListViewBehavior Command="{Binding ItemSelectedCommand}" />
       </b:BehaviorCollection>
     </b:Interaction.Behaviors>
-
-
     <ListView.ItemTemplate>
       <DataTemplate>
         <ViewCell>
@@ -39,12 +36,11 @@
                 </OnPlatform.WinPhone>
               </OnPlatform>
             </StackLayout.Padding>
-            <Label Text="{Binding Name}" YAlign="Center" />
-            <Label Text="{Binding Age}" YAlign="Center" />
+            <Label Text="{Binding Name}" YAlign="Center" TextColor="Green" />
+            <Label Text="{Binding Age}" YAlign="Center" TextColor="#ff0012" />
           </StackLayout>
         </ViewCell>
       </DataTemplate>
     </ListView.ItemTemplate>
-    
   </ListView>
 </ContentPage>

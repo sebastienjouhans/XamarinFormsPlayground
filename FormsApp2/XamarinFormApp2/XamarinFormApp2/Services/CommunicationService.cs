@@ -35,7 +35,7 @@
         {
 
             var requestUri =
-                new Uri("http://www.mocky.io/v2/55e033ebb4993140018440a1");
+                new Uri("http://www.mocky.io/v2/55e57a8d30f6e23d0fc42eb4");
 
             var request = this.GetPriorityMomentsRequest(HttpMethod.Get, requestUri);
 
