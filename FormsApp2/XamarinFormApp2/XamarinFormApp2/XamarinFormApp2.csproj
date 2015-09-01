@@ -42,6 +42,7 @@
     <Compile Include="Commands\DelegateCommandBase.cs" />
     <Compile Include="Commands\IActiveAware.cs" />
     <Compile Include="Commons\JsonSerializer.cs" />
+    <Compile Include="Commons\MessageBoxType.cs" />
     <Compile Include="Commons\NetworkResponse.cs" />
     <Compile Include="Commons\NetworkResponseStatus.cs" />
     <Compile Include="Commons\PageType.cs" />
@@ -53,6 +54,8 @@
     <Compile Include="Entities\Country.cs" />
     <Compile Include="Entities\TestData.cs" />
     <Compile Include="Entities\User.cs" />
+    <Compile Include="Interfaces\IMessageBoxService.cs" />
+    <Compile Include="Services\MessageBoxService.cs" />
     <Compile Include="Extensions\NetworkExtension.cs" />
     <Compile Include="Extensions\TaskExtensions.cs" />
     <Compile Include="Interfaces\ICommunicationService.cs" />

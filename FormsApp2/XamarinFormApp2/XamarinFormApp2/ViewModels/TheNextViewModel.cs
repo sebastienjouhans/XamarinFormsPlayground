@@ -14,6 +14,8 @@
     {
         private readonly INavigationService navigationService;
 
+        private readonly IMessageBoxService messageBoxService;
+
         private string name;
 
         private bool initialise = false;
@@ -22,14 +24,17 @@
 
         private string theNewTextForCustomControl;
 
-        public TheNextViewModel(INavigationService navigationService)
+        public TheNextViewModel(INavigationService navigationService,
+            IMessageBoxService messageBoxService)
         {
             this.navigationService = navigationService;
+            this.messageBoxService = messageBoxService;
+
             this.ThreeDTextCommand = new DelegateCommand(async () => await this.ThreeDTextAsync());
             this.DisplayAlertCommand = new DelegateCommand(this.DisplayAlert);
             this.ThreeDTextCommand = new DelegateCommand(async () => await this.ThreeDTextAsync());
             this.ListViewCommand = new DelegateCommand(async () => await this.ListViewAsync());
-            this.TextUpdatedCommand = new DelegateCommand(this.TextUpdated);
+            this.TextUpdatedCommand = new DelegateCommand<string>((text) => this.TextUpdated(text));
             this.UpdateControlCommand = new DelegateCommand(() =>
                 {
                     this.TheNewTextForCustomControl = "this is the new text";
@@ -139,9 +144,9 @@
             await this.navigationService.NavigateToAsync(this.navigationService.GetListPageViewDescriptor()).ConfigureAwait(false);
         }
 
-        private void TextUpdated()
+        private void TextUpdated(string text)
         {
-            Debug.WriteLine("Text updated");
+            this.messageBoxService.ShowMessage(MessageBoxType.TextUpdate);
         }
     }
 }

@@ -24,7 +24,7 @@ namespace XamarinFormApp2.Controls
                 {
                     var ctrl = (SomeControl)bindable;
                     ctrl.MyLabel.Text = (string)newValue;
-                    ctrl.Command.Execute(true);
+                    ctrl.Command.Execute((string)newValue);
                 });
 
         public SomeControl()

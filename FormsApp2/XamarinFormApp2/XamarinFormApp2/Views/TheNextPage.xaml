@@ -34,8 +34,7 @@
 
     <controls:SomeControl
       Command="{Binding TextUpdatedCommand}"
-      SomeNewText="{Binding TheNewTextForCustomControl}"
-      />
+      SomeNewText="{Binding TheNewTextForCustomControl}" />
     
   </StackLayout>
 </ContentPage>

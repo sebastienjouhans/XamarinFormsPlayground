@@ -52,6 +52,7 @@ namespace XamarinFormApp2
             container.RegisterType<IJsonSerializer, JsonSerializer>(new ContainerControlledLifetimeManager());
             container.RegisterType<ICommunicationService, CommunicationService>(new ContainerControlledLifetimeManager());
             container.RegisterType<INavigationService, NavigationService>(new ContainerControlledLifetimeManager(), new InjectionConstructor(Application.Current));
+            container.RegisterType<IMessageBoxService, MessageBoxService>(new ContainerControlledLifetimeManager(), new InjectionConstructor(Application.Current));
         }
         
         private void RegisterViewModels(IUnityContainer container)
