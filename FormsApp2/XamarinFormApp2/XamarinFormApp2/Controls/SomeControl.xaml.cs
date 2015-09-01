@@ -18,7 +18,7 @@ namespace XamarinFormApp2.Controls
         public static readonly BindableProperty SomeNewTextProperty =
             BindableProperty.Create<SomeControl, string>(
                 ctrl => ctrl.SomeNewText,
-                defaultValue: string.Empty,
+                defaultValue: "this text will update",
                 defaultBindingMode: BindingMode.TwoWay,
                 propertyChanging: (bindable, oldValue, newValue) =>
                 {
