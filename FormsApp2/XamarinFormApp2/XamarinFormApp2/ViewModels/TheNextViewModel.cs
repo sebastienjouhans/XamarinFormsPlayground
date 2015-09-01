@@ -1,5 +1,6 @@
 ﻿namespace XamarinFormApp2.ViewModels
 {
+    using System.Diagnostics;
     using System.Threading.Tasks;
     using System.Windows.Input;
 
@@ -19,6 +20,8 @@
 
         private string textFromPreviousPage;
 
+        private string theNewTextForCustomControl;
+
         public TheNextViewModel(INavigationService navigationService)
         {
             this.navigationService = navigationService;
@@ -26,6 +29,11 @@
             this.DisplayAlertCommand = new DelegateCommand(this.DisplayAlert);
             this.ThreeDTextCommand = new DelegateCommand(async () => await this.ThreeDTextAsync());
             this.ListViewCommand = new DelegateCommand(async () => await this.ListViewAsync());
+            this.TextUpdatedCommand = new DelegateCommand(this.TextUpdated);
+            this.UpdateControlCommand = new DelegateCommand(() =>
+                {
+                    this.TheNewTextForCustomControl = "this is the new text";
+                });
 
             this.AppearingCommand = new DelegateCommand(this.Appearing);
             this.DisappearingCommand = new DelegateCommand(this.Disappearing);
@@ -42,6 +50,10 @@
         public ICommand ThreeDTextCommand { get; set; }
 
         public ICommand ListViewCommand { get; set; }
+
+        public ICommand TextUpdatedCommand { get; set; }
+
+        public ICommand UpdateControlCommand { get; set; }
 
         public string Name
         {
@@ -66,6 +78,20 @@
             private set
             {
                 this.Set(() => this.TextFromPreviousPage, ref this.textFromPreviousPage, value);
+            }
+        }
+
+
+        public string TheNewTextForCustomControl
+        {
+            get
+            {
+                return this.theNewTextForCustomControl;
+            }
+
+            private set
+            {
+                this.Set(() => this.TheNewTextForCustomControl, ref this.theNewTextForCustomControl, value);
             }
         }
 
@@ -108,6 +134,11 @@
         private async Task ListViewAsync()
         {
             await this.navigationService.NavigateToAsync(this.navigationService.GetListPageViewDescriptor()).ConfigureAwait(false);
+        }
+
+        private void TextUpdated()
+        {
+            Debug.WriteLine("Text updated");
         }
     }
 }

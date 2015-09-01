@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XamarinFormApp2.Views.TheNextPage"
+             xmlns:controls="clr-namespace:XamarinFormApp2.Controls;assembly=XamarinFormApp2"
              xmlns:b="clr-namespace:Xamarin.Behaviors;assembly=Xamarin.Behaviors">
 
   <!--BindingContext="{Binding Path=TheNextViewModel, Source={StaticResource ServiceLocator}}"-->
@@ -26,5 +27,15 @@
     <Button
       Text="list view with comm service"
       Command="{Binding ListViewCommand}"/>
+    
+    <Button
+      Text="update control"
+      Command="{Binding UpdateControlCommand}"/>
+
+    <controls:SomeControl
+      Command="{Binding TextUpdatedCommand}"
+      SomeNewText="{Binding TheNewTextForCustomControl}"
+      />
+    
   </StackLayout>
 </ContentPage>
