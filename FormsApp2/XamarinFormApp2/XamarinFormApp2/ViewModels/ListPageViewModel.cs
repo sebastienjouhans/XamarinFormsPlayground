@@ -13,6 +13,7 @@ namespace XamarinFormApp2.ViewModels
 
     using Xamarin.Forms;
 
+    using XamarinFormApp2.Commons;
     using XamarinFormApp2.Entities;
     using XamarinFormApp2.Interfaces;
 
@@ -20,13 +21,17 @@ namespace XamarinFormApp2.ViewModels
     {
         private readonly ICommunicationService communicationService;
 
+        private readonly IMessageBoxService messageBoxService;
+
         private TestData listViewData;
 
         private List<User> usersData;
 
-        public ListPageViewModel(ICommunicationService communicationService)
+        public ListPageViewModel(ICommunicationService communicationService,
+            IMessageBoxService messageBoxService)
         {
             this.communicationService = communicationService;
+            this.messageBoxService = messageBoxService;
 
             this.AppearingCommand = new DelegateCommand(async () => await this.AppearingAsync());
 
@@ -83,7 +88,7 @@ namespace XamarinFormApp2.ViewModels
 
         private void ItemSelected(SelectedItemChangedEventArgs e)
         {
-            Debug.WriteLine((e.SelectedItem as User).Name);
+            this.messageBoxService.ShowMessageAsync(MessageBoxType.Generic, "user", (e.SelectedItem as User).Name);
         }
     }
 }

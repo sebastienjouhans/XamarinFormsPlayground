@@ -41,7 +41,7 @@ namespace XamarinFormApp2.Services
 
         public async Task NavigateToAsync(ViewDescriptor viewDescriptor)
         {
-            await this.NavigateToAsync(viewDescriptor, false);
+            await this.NavigateToAsync(viewDescriptor, false).ConfigureAwait(false);
         }
 
         public async Task NavigateToAsync(ViewDescriptor viewDescriptor, bool animated)
@@ -57,27 +57,27 @@ namespace XamarinFormApp2.Services
                 viewModel.ViewArgs = viewDescriptor.ViewArgs;
             }
 
-            await this.Navigation.PushAsync(page, animated);
+            await this.Navigation.PushAsync(page, animated).ConfigureAwait(false);
         }
 
         public async Task<Page> GoBackAsync()
         {
-            return await this.GoBackAsync(false);
+            return await this.GoBackAsync(false).ConfigureAwait(false);
         }
 
         public async Task<Page> GoBackAsync(bool animated)
         {
-            return await this.Navigation.PopAsync(animated);
+            return await this.Navigation.PopAsync(animated).ConfigureAwait(false);
         }
 
         public async Task PushModalAsync(Page page)
         {
-            await this.PushModalAsync(page, false);
+            await this.PushModalAsync(page, false).ConfigureAwait(false);
         }
 
         public async Task PushModalAsync(Page page, bool animated)
         {
-            this.Navigation.PushModalAsync(page, animated);
+            this.Navigation.PushModalAsync(page, animated).ConfigureAwait(false);
         }
 
         

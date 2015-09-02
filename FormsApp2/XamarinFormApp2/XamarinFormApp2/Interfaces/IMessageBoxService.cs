@@ -10,6 +10,8 @@ namespace XamarinFormApp2.Interfaces
 
     public interface IMessageBoxService
     {
-        Task ShowMessage(MessageBoxType messageBoxType);
+        Task ShowMessageAsync(MessageBoxType messageBoxType);
+
+        Task ShowMessageAsync(MessageBoxType messageBoxType, string title, string message);
     }
 }

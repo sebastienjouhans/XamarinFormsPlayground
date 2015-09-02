@@ -7,6 +7,7 @@
     using Microsoft.Practices.Prism.Commands;
 
     using XamarinFormApp2.Commons;
+    using XamarinFormApp2.Extensions;
     using XamarinFormApp2.Interfaces;
     using XamarinFormApp2.Views;
 
@@ -34,7 +35,7 @@
             this.DisplayAlertCommand = new DelegateCommand(this.DisplayAlert);
             this.ThreeDTextCommand = new DelegateCommand(async () => await this.ThreeDTextAsync());
             this.ListViewCommand = new DelegateCommand(async () => await this.ListViewAsync());
-            this.TextUpdatedCommand = new DelegateCommand<string>((text) => this.TextUpdated(text));
+            this.TextUpdatedCommand = new DelegateCommand<string>(this.TextUpdated);
             this.UpdateControlCommand = new DelegateCommand(() =>
                 {
                     this.TheNewTextForCustomControl = "this is the new text";
@@ -131,7 +132,7 @@
 
         private void DisplayAlert()
         {
-            this.navigationService.PushModalAsync(new MainPage());
+            this.navigationService.PushModalAsync(new MainPage()).ConfigureAwait(false);
         }
 
         private async Task ThreeDTextAsync()
@@ -146,7 +147,7 @@
 
         private void TextUpdated(string text)
         {
-            this.messageBoxService.ShowMessage(MessageBoxType.TextUpdate);
+            this.messageBoxService.ShowMessageAsync(MessageBoxType.TextUpdate).Forget();
         }
     }
 }

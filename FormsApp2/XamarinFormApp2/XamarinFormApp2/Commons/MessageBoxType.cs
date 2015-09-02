@@ -3,5 +3,6 @@
     public enum MessageBoxType
     {
         TextUpdate,
+        Generic,
     }
 }

@@ -26,16 +26,25 @@ namespace XamarinFormApp2.Services
         }
 
 
-        public async Task ShowMessage(MessageBoxType messageBoxType)
+        public async Task ShowMessageAsync(MessageBoxType messageBoxType)
         {
             switch (messageBoxType)
             {
                 case MessageBoxType.TextUpdate:
-                    await this.MainPage.DisplayAlert("the text title", "the text message", "OK");
+                    await this.MainPage.DisplayAlert("title here", "the text in the control has updated", "OK", "Close");
                     break;
             }
         }
 
+        public async Task ShowMessageAsync(MessageBoxType messageBoxType, string title, string message)
+        {
+            switch (messageBoxType)
+            {
+                case MessageBoxType.Generic:
+                    await this.MainPage.DisplayAlert(title, message, "OK", "Cancel");
+                    break;
+            }
+        }
 
         private Page GetDisplayAllert()
         {
