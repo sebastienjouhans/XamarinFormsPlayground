@@ -46,6 +46,8 @@ namespace XamarinFormApp2.Behaviors
             }
 
             this.Command.Execute(e);
+
+            this.AssociatedObject.SelectedItem = null;
         }
 
         protected override void OnAttach()

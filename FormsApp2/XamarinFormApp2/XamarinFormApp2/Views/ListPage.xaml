@@ -14,7 +14,8 @@
   <ListView
     x:Name="MyListView"
     ItemsSource="{Binding UsersData}"
-    HasUnevenRows="True">
+    HasUnevenRows="True"
+    SeparatorColor="#ddd">
     <b:Interaction.Behaviors>
       <b:BehaviorCollection>
         <behaviors:OnCommandSelectedItemListViewBehavior Command="{Binding ItemSelectedCommand}" />
@@ -23,8 +24,8 @@
     <ListView.ItemTemplate>
       <DataTemplate>
         <ViewCell>
-          <StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal">
-            <StackLayout.Padding>
+          <StackLayout Orientation="Horizontal">
+            <!--<StackLayout.Padding>
               <OnPlatform x:TypeArguments="Thickness">
                 <OnPlatform.iOS>
                   0, 20, 0, 0
@@ -36,9 +37,15 @@
                   0, 80, 0, 0
                 </OnPlatform.WinPhone>
               </OnPlatform>
-            </StackLayout.Padding>
-            <Label Text="{Binding Name}" YAlign="Center" TextColor="Green" />
-            <Label Text="{Binding Age}" YAlign="Start" TextColor="#ff0012" />
+            </StackLayout.Padding>-->
+            <Image
+              Source="{Binding ThumbImage}"
+              WidthRequest ="40"
+              HeightRequest ="40"/>
+            <StackLayout Orientation="Vertical">
+              <Label Text="{Binding Name}" YAlign="Center" TextColor="Green" />
+              <Label Text="{Binding Age}" YAlign="Center" TextColor="#ff0012" />
+            </StackLayout>
           </StackLayout>
         </ViewCell>
       </DataTemplate>

@@ -88,6 +88,11 @@ namespace XamarinFormApp2.ViewModels
 
         private void ItemSelected(SelectedItemChangedEventArgs e)
         {
+            if (e.SelectedItem == null)
+            {
+                return;
+            }
+
             this.messageBoxService.ShowMessageAsync(MessageBoxType.Generic, "user", (e.SelectedItem as User).Name);
         }
     }
