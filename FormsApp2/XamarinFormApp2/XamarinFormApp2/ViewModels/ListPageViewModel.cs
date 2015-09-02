@@ -27,6 +27,8 @@ namespace XamarinFormApp2.ViewModels
 
         private List<User> usersData;
 
+        private bool isLoading;
+
         public ListPageViewModel(ICommunicationService communicationService,
             IMessageBoxService messageBoxService)
         {
@@ -68,12 +70,27 @@ namespace XamarinFormApp2.ViewModels
             }
         }
 
+        public bool IsLoading
+        {
+            get
+            {
+                return this.isLoading;
+            }
+
+            private set
+            {
+                this.Set(() => this.IsLoading, ref this.isLoading, value);
+            }
+        }
+
         public override void Dispose()
         {
         }
 
         private async Task AppearingAsync()
         {
+            this.IsLoading = true;
+
             var result = await this.communicationService.GetTestDataAsync().ConfigureAwait(false);
 
             if (result == null)
@@ -84,6 +101,8 @@ namespace XamarinFormApp2.ViewModels
             this.ListViewData = result.Response;
 
             this.UsersData = this.ListViewData.Users;
+
+            this.IsLoading = false;
         }
 
         private async Task ItemSelected(SelectedItemChangedEventArgs e)
