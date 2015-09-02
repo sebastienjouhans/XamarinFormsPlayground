@@ -1,0 +1,11 @@
+http://www.mocky.io/
+
+{
+    "users":
+    [
+        {"name":"seb", "age":"20", "thumbImage":"http://i.thelocalpeople.co.uk/profile_images/small/90.jpg"},
+        {"name":"ben", "age":"22", "thumbImage":"http://i.thelocalpeople.co.uk/profile_images/small/91.jpg"},
+        {"name":"jason", "age":"24", "thumbImage":"http://i.thelocalpeople.co.uk/profile_images/small/92.jpg"},
+        {"name":"james", "age":"26", "thumbImage":"http://i.thelocalpeople.co.uk/profile_images/small/93.jpg"},
+    ]
+}
