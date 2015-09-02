@@ -13,5 +13,6 @@ Testing Xamarin Forms
 * custom behaviors
 * bindable property (in behavior)
 * custom control with bindable property
-* added message box service for message alerts
+* message box service for message alerts
+* custom button render (android has custom color on press, how to do this in the other platforms?)
 
