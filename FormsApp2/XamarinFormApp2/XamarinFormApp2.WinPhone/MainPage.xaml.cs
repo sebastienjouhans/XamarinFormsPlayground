@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Navigation;
-using Microsoft.Phone.Controls;
-using Microsoft.Phone.Shell;
-
-namespace XamarinFormApp2.WinPhone
+﻿namespace XamarinFormApp2.WinPhone
 {
+    using Microsoft.Phone.Controls;
+
+    using ImageCircle.Forms.Plugin.WindowsPhone;
+
     public partial class MainPage : global::Xamarin.Forms.Platform.WinPhone.FormsApplicationPage
     {
         public MainPage()
@@ -18,6 +12,7 @@ namespace XamarinFormApp2.WinPhone
             SupportedOrientations = SupportedPageOrientation.PortraitOrLandscape;
 
             global::Xamarin.Forms.Forms.Init();
+            ImageCircleRenderer.Init();
             LoadApplication(new XamarinFormApp2.App());
         }
     }

@@ -18,8 +18,8 @@
       x:Name="MyListView"
       ItemsSource="{Binding UsersData}"
       HasUnevenRows="True"
-      SeparatorColor="#ddd"
-    >
+      SeparatorColor="#ddd">
+      
       <b:Interaction.Behaviors>
         <b:BehaviorCollection>
           <behaviors:OnCommandSelectedItemListViewBehavior Command="{Binding ItemSelectedCommand}" />
