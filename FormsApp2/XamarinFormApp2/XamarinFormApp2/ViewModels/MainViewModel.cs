@@ -72,7 +72,11 @@
 
         private async Task NextPageAsync()
         {
-            await this.navigationService.NavigateToAsync(this.navigationService.GetTheNextPageViewDescriptor(new TheNextPageViewArgs { SomeImpotantParameter = "this a passed viewargs" }));
+            await
+                this.navigationService.NavigateToAsync(
+                    this.navigationService.GetTheNextPageViewDescriptor(
+                        new TheNextPageViewArgs { SomeImpotantParameter = "this a passed viewargs" }),
+                    true).ConfigureAwait(false);
         }
     }
 }

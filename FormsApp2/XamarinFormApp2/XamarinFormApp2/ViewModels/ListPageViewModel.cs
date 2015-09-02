@@ -35,7 +35,7 @@ namespace XamarinFormApp2.ViewModels
 
             this.AppearingCommand = new DelegateCommand(async () => await this.AppearingAsync());
 
-            this.ItemSelectedCommand = new DelegateCommand<SelectedItemChangedEventArgs>(this.ItemSelected);
+            this.ItemSelectedCommand = new DelegateCommand<SelectedItemChangedEventArgs>((evt) => this.ItemSelected(evt));
         }
 
         public ICommand AppearingCommand { get; private set; }
@@ -86,14 +86,16 @@ namespace XamarinFormApp2.ViewModels
             this.UsersData = this.ListViewData.Users;
         }
 
-        private void ItemSelected(SelectedItemChangedEventArgs e)
+        private async Task ItemSelected(SelectedItemChangedEventArgs e)
         {
             if (e.SelectedItem == null)
             {
                 return;
             }
 
-            this.messageBoxService.ShowMessageAsync(MessageBoxType.Generic, "user", (e.SelectedItem as User).Name);
+            await
+                this.messageBoxService.ShowMessageAsync(MessageBoxType.Generic, "user", (e.SelectedItem as User).Name)
+                    .ConfigureAwait(false);
         }
     }
 }

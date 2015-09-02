@@ -32,10 +32,10 @@
             this.messageBoxService = messageBoxService;
 
             this.ThreeDTextCommand = new DelegateCommand(async () => await this.ThreeDTextAsync());
-            this.DisplayAlertCommand = new DelegateCommand(this.DisplayAlert);
+            this.DisplayAlertCommand = new DelegateCommand(async () => await this.DisplayAlert());
             this.ThreeDTextCommand = new DelegateCommand(async () => await this.ThreeDTextAsync());
             this.ListViewCommand = new DelegateCommand(async () => await this.ListViewAsync());
-            this.TextUpdatedCommand = new DelegateCommand<string>(this.TextUpdated);
+            this.TextUpdatedCommand = new DelegateCommand<string>(async (x) => await this.TextUpdated(x));
             this.UpdateControlCommand = new DelegateCommand(() =>
                 {
                     this.TheNewTextForCustomControl = "this is the new text";
@@ -130,9 +130,9 @@
             this.TextFromPreviousPage = ((TheNextPageViewArgs)this.ViewArgs).SomeImpotantParameter;
         }
 
-        private void DisplayAlert()
+        private async Task DisplayAlert()
         {
-            this.navigationService.PushModalAsync(new MainPage()).ConfigureAwait(false);
+            await this.navigationService.PushModalAsync(new MainPage()).ConfigureAwait(false);
         }
 
         private async Task ThreeDTextAsync()
@@ -145,9 +145,9 @@
             await this.navigationService.NavigateToAsync(this.navigationService.GetListPageViewDescriptor()).ConfigureAwait(false);
         }
 
-        private void TextUpdated(string text)
+        private async Task TextUpdated(string text)
         {
-            this.messageBoxService.ShowMessageAsync(MessageBoxType.TextUpdate).Forget();
+            await this.messageBoxService.ShowMessageAsync(MessageBoxType.TextUpdate).ConfigureAwait(false);
         }
     }
 }
