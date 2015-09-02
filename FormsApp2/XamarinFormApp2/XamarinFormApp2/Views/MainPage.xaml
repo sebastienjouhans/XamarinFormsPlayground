@@ -34,17 +34,19 @@
       </OnPlatform.WinPhone>
     </OnPlatform>
   </ContentPage.Padding>
-
-  <!--<ContentPage.Padding>
-    <OnPlatform x:TypeArguments="Thickness"
-                iOS="0, 20, 0, 0"
-                Android="0, 0, 0, 0"
-                WinPhone="0, 0, 0, 0" />
-  </ContentPage.Padding>-->
   
   <StackLayout>
     <Label Text="{Binding Name}" FontSize="50" VerticalOptions="Center" HorizontalOptions="Center" Style="{StaticResource labelStyle}" />
-    <Button Text="Click me" Command="{Binding ClickCommand}" />
+    
+    <Button Text="Click me" Command="{Binding ClickCommand}" BorderRadius="32" BorderWidth="8">
+      <Button.BackgroundColor>
+        <OnPlatform x:TypeArguments="Color" WinPhone="#FF343434" />
+      </Button.BackgroundColor>
+      <Button.BorderColor>
+        <OnPlatform x:TypeArguments="Color" iOS="#FF6495ED" Android="#FF474747" WinPhone="#FF474747" />
+      </Button.BorderColor>
+    </Button>
+    
     <Button Text="Next Page" Command="{Binding NextPageCommand}" />
   </StackLayout>
 </ContentPage>
