@@ -42,8 +42,6 @@
                 });
 
 
-            this.TheNewTextForCustomControl = "default text - this will update";
-
             this.AppearingCommand = new DelegateCommand(this.Appearing);
             this.DisappearingCommand = new DelegateCommand(this.Disappearing);
         }
@@ -126,6 +124,8 @@
         private void Initialise()
         {
             this.initialise = true;
+
+			this.TheNewTextForCustomControl = "default text - this will update";
 
             this.TextFromPreviousPage = ((TheNextPageViewArgs)this.ViewArgs).SomeImpotantParameter;
         }
