@@ -48,6 +48,7 @@
     <Compile Include="Commons\PageType.cs" />
     <Compile Include="Commons\TheNextPageViewArgs.cs" />
     <Compile Include="Commons\ViewArgs.cs" />
+    <Compile Include="Controls\MyCustomButton.cs" />
     <Compile Include="Controls\SomeControl.xaml.cs">
       <DependentUpon>SomeControl.xaml</DependentUpon>
     </Compile>

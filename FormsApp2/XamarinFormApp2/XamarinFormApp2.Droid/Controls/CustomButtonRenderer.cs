@@ -2,7 +2,7 @@ using Xamarin.Forms;
 
 using XamarinFormApp2.Droid.Controls;
 
-[assembly: ExportRenderer(typeof(Xamarin.Forms.Button), typeof(CustomButtonRenderer))]
+[assembly: ExportRenderer(typeof(XamarinFormApp2.Controls.MyCustomButton), typeof(CustomButtonRenderer))]
 namespace XamarinFormApp2.Droid.Controls
 {
     using System.ComponentModel;

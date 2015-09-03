@@ -2,7 +2,7 @@
 
 using XamarinFormApp2.WinPhone.Controls;
 
-[assembly: ExportRenderer(typeof(Xamarin.Forms.Button), typeof(CustomButtonRenderer))]
+[assembly: ExportRenderer(typeof(XamarinFormApp2.Controls.MyCustomButton), typeof(CustomButtonRenderer))]
 namespace XamarinFormApp2.WinPhone.Controls
 {
     using System;
@@ -31,6 +31,11 @@ namespace XamarinFormApp2.WinPhone.Controls
         private void OnSizeChanged(object sender, EventArgs e)
         {
             var button = (Xamarin.Forms.Button)sender;
+
+            var uri = new Uri("/XamarinFormApp2.WinPhone;component/Themes/Generic.xaml", UriKind.RelativeOrAbsolute);
+            var rs = new ResourceDictionary();
+            rs.Source = uri;
+            Control.Style = rs["MainButtonStyle"] as Style;
 
             Control.ApplyTemplate();
             var borders = Control.GetVisuals<Border>();

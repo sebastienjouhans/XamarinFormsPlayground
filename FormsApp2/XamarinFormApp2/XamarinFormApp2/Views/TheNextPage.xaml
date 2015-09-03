@@ -24,7 +24,7 @@
       Text="3d text"
       Command="{Binding ThreeDTextCommand}"/>
 
-    <Button
+    <controls:MyCustomButton
       Text="list view with comm service"
       Command="{Binding ListViewCommand}"/>
     
