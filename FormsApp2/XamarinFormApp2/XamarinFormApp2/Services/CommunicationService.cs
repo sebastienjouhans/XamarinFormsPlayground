@@ -37,7 +37,7 @@
             var requestUri =
                 new Uri("http://www.mocky.io/v2/55e6c13113cc83ec0dda068a");
 
-            var request = this.GetPriorityMomentsRequest(HttpMethod.Get, requestUri);
+            var request = this.GetRequest(HttpMethod.Get, requestUri);
 
             var result =
                 await
@@ -47,7 +47,7 @@
             return result;
         }
 
-        private HttpRequestMessage GetPriorityMomentsRequest(HttpMethod method, Uri requestUri)
+        private HttpRequestMessage GetRequest(HttpMethod method, Uri requestUri)
         {
             var request = new HttpRequestMessage(method, requestUri);
             //request.Headers.Add(DeviceIdHeader, this.deviceInformationService.DeviceUniqueId);
