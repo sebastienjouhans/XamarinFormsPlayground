@@ -1,5 +1,5 @@
 # XamarinFormsPlayground
-Testing Xamarin Forms
+A collection of projects for Testing Xamarin Forms
 
 #### FormsApp2 - xamarin forms v1.4
 * mvvm
