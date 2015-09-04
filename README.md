@@ -16,5 +16,5 @@ Testing Xamarin Forms
 * message box service for message alerts
 * activity indicator
 * custom button renderer with custom press state for Android and WP
-* storage service read/write files locally making use of PCL storage 
+* storage service read/write text files locally making use of PCL storage 
 
