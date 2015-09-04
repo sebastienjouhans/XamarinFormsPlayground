@@ -27,7 +27,7 @@ namespace XamarinFormApp2.Droid.Controls
                 _normal = new Android.Graphics.Drawables.GradientDrawable();
 
                 if (button.BackgroundColor.R == -1.0 && button.BackgroundColor.G == -1.0 && button.BackgroundColor.B == -1.0)
-                    _normal.SetColor(Android.Graphics.Color.ParseColor("#ff2c2e2f"));
+                    _normal.SetColor(Android.Graphics.Color.ParseColor("#ff002eff"));
                 else
                     _normal.SetColor(button.BackgroundColor.ToAndroid());
 
