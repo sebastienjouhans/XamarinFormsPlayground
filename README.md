@@ -1,5 +1,5 @@
 # XamarinFormsPlayground
-Testing Xamarin Forms
+A collection of projects for Testing Xamarin Forms
 
 #### FormsApp2 - xamarin forms v1.4
 * mvvm
@@ -16,4 +16,5 @@ Testing Xamarin Forms
 * message box service for message alerts
 * activity indicator
 * custom button renderer with custom press state for Android and WP
+* storage service read/write text files locally making use of PCL storage 
 
