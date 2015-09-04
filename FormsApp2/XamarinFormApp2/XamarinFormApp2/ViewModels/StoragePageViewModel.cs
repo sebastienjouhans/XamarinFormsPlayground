@@ -55,21 +55,6 @@
             this.InitialiseAsync();
         }
 
-        private async Task InitialiseAsync()
-        {
-            this.initialise = true;
-
-            var result = await this.storageService.GetDataSettingAsync();
-
-            if (result == null)
-            {
-                return;
-            }
-
-            this.Name = result.Name;
-            this.Age = result.Age.ToString();
-        }
-
         public string Name
         {
             get
@@ -94,6 +79,21 @@
             {
                 this.Set(() => this.Age, ref this.age, value);
             }
+        }
+
+        private async Task InitialiseAsync()
+        {
+            this.initialise = true;
+
+            var result = await this.storageService.GetDataSettingAsync().ConfigureAwait(false);
+
+            if (result == null)
+            {
+                return;
+            }
+
+            this.Name = result.Name;
+            this.Age = result.Age.ToString();
         }
 
         private async Task StoreContentAsync()
