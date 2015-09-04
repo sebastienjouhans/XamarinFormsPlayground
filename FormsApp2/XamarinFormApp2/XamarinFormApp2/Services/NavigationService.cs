@@ -114,7 +114,12 @@ namespace XamarinFormApp2.Services
 
         public ViewDescriptor GetListPageViewDescriptor()
         {
-            return new ViewDescriptor(PageType.ListPage, null);
+            return new ViewDescriptor(PageType.ListPage);
+        }
+
+        public ViewDescriptor GetStoragePageViewDescriptor()
+        {
+            return new ViewDescriptor(PageType.StoragePage);
         }
 
         public ViewDescriptor GetTheNextPageViewDescriptor(ViewArgs viewArgs)
@@ -124,7 +129,7 @@ namespace XamarinFormApp2.Services
 
         public ViewDescriptor GetThreeDTextViewDescriptor()
         {
-            return new ViewDescriptor(PageType.ThreeDTextPage, null);
+            return new ViewDescriptor(PageType.ThreeDTextPage);
         }
 
         private INavigation GetNavigation()

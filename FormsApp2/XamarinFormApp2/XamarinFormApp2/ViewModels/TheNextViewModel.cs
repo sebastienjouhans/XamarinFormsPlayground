@@ -32,10 +32,11 @@
             this.messageBoxService = messageBoxService;
 
             this.ThreeDTextCommand = new DelegateCommand(async () => await this.ThreeDTextAsync());
-            this.DisplayAlertCommand = new DelegateCommand(async () => await this.DisplayAlert());
+            this.DisplayAlertCommand = new DelegateCommand(async () => await this.DisplayAlertAsync());
             this.ThreeDTextCommand = new DelegateCommand(async () => await this.ThreeDTextAsync());
             this.ListViewCommand = new DelegateCommand(async () => await this.ListViewAsync());
-            this.TextUpdatedCommand = new DelegateCommand<string>(async (x) => await this.TextUpdated(x));
+            this.TextUpdatedCommand = new DelegateCommand<string>(async (x) => await this.TextUpdatedAsync(x));
+            this.StoragePageCommand = new DelegateCommand(async () => await this.StoragePageAsync());
             this.UpdateControlCommand = new DelegateCommand(() =>
                 {
                     this.TheNewTextForCustomControl = "this is the new text";
@@ -59,6 +60,8 @@
         public ICommand ListViewCommand { get; set; }
 
         public ICommand TextUpdatedCommand { get; set; }
+
+        public ICommand StoragePageCommand { get; set; }
 
         public ICommand UpdateControlCommand { get; set; }
 
@@ -124,13 +127,16 @@
         private void Initialise()
         {
             this.initialise = true;
+            
+            this.TheNewTextForCustomControl = "default text - this will update";
 
-			this.TheNewTextForCustomControl = "default text - this will update";
-
-            this.TextFromPreviousPage = ((TheNextPageViewArgs)this.ViewArgs).SomeImpotantParameter;
+            if (this.ViewArgs != null)
+            {
+                this.TextFromPreviousPage = ((TheNextPageViewArgs)this.ViewArgs).SomeImpotantParameter;
+            }
         }
 
-        private async Task DisplayAlert()
+        private async Task DisplayAlertAsync()
         {
             await this.navigationService.PushModalAsync(new MainPage()).ConfigureAwait(false);
         }
@@ -145,9 +151,14 @@
             await this.navigationService.NavigateToAsync(this.navigationService.GetListPageViewDescriptor()).ConfigureAwait(false);
         }
 
-        private async Task TextUpdated(string text)
+        private async Task TextUpdatedAsync(string text)
         {
             await this.messageBoxService.ShowMessageAsync(MessageBoxType.TextUpdate).ConfigureAwait(false);
+        }
+
+        private async Task StoragePageAsync()
+        {
+            await this.navigationService.NavigateToAsync(this.navigationService.GetStoragePageViewDescriptor()).ConfigureAwait(false);
         }
     }
 }

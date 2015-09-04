@@ -6,5 +6,6 @@
         TheNextPage,
         ThreeDTextPage,
         ListPage,
+        StoragePage,
     }
 }

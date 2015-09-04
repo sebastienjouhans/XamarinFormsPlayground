@@ -35,6 +35,10 @@
     <controls:SomeControl
       Command="{Binding TextUpdatedCommand}"
       SomeNewText="{Binding TheNewTextForCustomControl}" />
+
+    <Button
+      Text="storage test"
+      Command="{Binding StoragePageCommand}"/>
     
   </StackLayout>
 </ContentPage>

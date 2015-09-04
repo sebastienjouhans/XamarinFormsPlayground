@@ -29,5 +29,7 @@
 
         ViewDescriptor GetListPageViewDescriptor();
 
+        ViewDescriptor GetStoragePageViewDescriptor();
+
     }
 }

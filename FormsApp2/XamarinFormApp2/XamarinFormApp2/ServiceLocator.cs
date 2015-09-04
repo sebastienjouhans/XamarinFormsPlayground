@@ -40,6 +40,11 @@ namespace XamarinFormApp2
         public ListPageViewModel ListPageViewModel
         {
             get { return this.globalContainer.Resolve<ListPageViewModel>(); }
+        }
+
+        public StoragePageViewModel StoragePageViewModel
+        {
+            get { return this.globalContainer.Resolve<StoragePageViewModel>(); }
         } 
         
 
@@ -53,6 +58,7 @@ namespace XamarinFormApp2
             container.RegisterType<ICommunicationService, CommunicationService>(new ContainerControlledLifetimeManager());
             container.RegisterType<INavigationService, NavigationService>(new ContainerControlledLifetimeManager(), new InjectionConstructor(Application.Current));
             container.RegisterType<IMessageBoxService, MessageBoxService>(new ContainerControlledLifetimeManager(), new InjectionConstructor(Application.Current));
+            container.RegisterType<IStorageService, StorageService>(new ContainerControlledLifetimeManager());
         }
         
         private void RegisterViewModels(IUnityContainer container)
@@ -60,6 +66,7 @@ namespace XamarinFormApp2
             container.RegisterType<MainViewModel, MainViewModel>();
             container.RegisterType<TheNextViewModel, TheNextViewModel>();
             container.RegisterType<ListPageViewModel, ListPageViewModel>();
+            container.RegisterType<StoragePageViewModel, StoragePageViewModel>();
         }
 
     }

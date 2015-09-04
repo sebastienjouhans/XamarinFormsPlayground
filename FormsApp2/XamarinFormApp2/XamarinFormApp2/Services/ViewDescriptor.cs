@@ -21,8 +21,7 @@ namespace XamarinFormApp2.Services
         /// </summary>
         private readonly ViewArgs viewArgs;
 
-
-        public ViewDescriptor(PageType pageType, ViewArgs viewArgs)
+        public ViewDescriptor(PageType pageType, ViewArgs viewArgs = null)
         {
             this.pageType = pageType;
             this.viewArgs = viewArgs;

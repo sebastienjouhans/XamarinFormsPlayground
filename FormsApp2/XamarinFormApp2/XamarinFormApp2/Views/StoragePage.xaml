@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:b="clr-namespace:Xamarin.Behaviors;assembly=Xamarin.Behaviors"
+             x:Class="XamarinFormApp2.Views.StoragePage">
+
+  <b:Interaction.Behaviors>
+    <b:BehaviorCollection>
+      <b:EventToCommand EventName="Appearing"  Command="{Binding AppearingCommand}" />
+    </b:BehaviorCollection>
+  </b:Interaction.Behaviors>
+  <StackLayout>
+    <Entry Text="{Binding Name, Mode=TwoWay}" VerticalOptions="Center" HorizontalOptions="FillAndExpand" />
+    <Entry Text="{Binding Age, Mode=TwoWay}" VerticalOptions="Center" HorizontalOptions="FillAndExpand" />
+    <Button Text="Save" Command="{Binding StoreContentCommand}"/>
+  </StackLayout>
+</ContentPage>
