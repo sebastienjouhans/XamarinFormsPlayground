@@ -93,7 +93,9 @@ namespace XamarinFormApp2.ViewModels
 
             var result = await this.communicationService.GetTestDataAsync().ConfigureAwait(false);
 
-            if (result == null)
+            this.IsLoading = false;
+
+            if (result == null || !result.IsSuccessful)
             {
                 return;
             }
@@ -101,8 +103,6 @@ namespace XamarinFormApp2.ViewModels
             this.ListViewData = result.Response;
 
             this.UsersData = this.ListViewData.Users;
-
-            this.IsLoading = false;
         }
 
         private async Task ItemSelected(SelectedItemChangedEventArgs e)
