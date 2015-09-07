@@ -39,6 +39,10 @@
     <Button
       Text="storage test"
       Command="{Binding StoragePageCommand}"/>
+
+    <Button
+      Text="Tab test"
+      Command="{Binding TabPageCommand}"/>
     
   </StackLayout>
 </ContentPage>

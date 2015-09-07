@@ -41,11 +41,13 @@
                 {
                     this.TheNewTextForCustomControl = "this is the new text";
                 });
-
+            this.TabPageCommand = new DelegateCommand(async () => await this.TabPageAsync());
 
             this.AppearingCommand = new DelegateCommand(this.Appearing);
             this.DisappearingCommand = new DelegateCommand(this.Disappearing);
         }
+
+        public ICommand TabPageCommand { get; set; }
 
         public ICommand MasterDetailsCommand { get; private set; }
 
@@ -159,6 +161,11 @@
         private async Task StoragePageAsync()
         {
             await this.navigationService.NavigateToAsync(this.navigationService.GetStoragePageViewDescriptor()).ConfigureAwait(false);
+        }
+
+        private async Task TabPageAsync()
+        {
+            await this.navigationService.NavigateToAsync(this.navigationService.GetTabPageViewDescriptor()).ConfigureAwait(false);
         }
     }
 }

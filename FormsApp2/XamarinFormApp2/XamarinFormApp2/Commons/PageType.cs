@@ -7,5 +7,6 @@
         ThreeDTextPage,
         ListPage,
         StoragePage,
+        TabPage,
     }
 }

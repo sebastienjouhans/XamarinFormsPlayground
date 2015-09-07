@@ -112,6 +112,11 @@ namespace XamarinFormApp2.Services
         //}
 
 
+        public ViewDescriptor GetTabPageViewDescriptor()
+        {
+            return new ViewDescriptor(PageType.TabPage);
+        }
+
         public ViewDescriptor GetListPageViewDescriptor()
         {
             return new ViewDescriptor(PageType.ListPage);

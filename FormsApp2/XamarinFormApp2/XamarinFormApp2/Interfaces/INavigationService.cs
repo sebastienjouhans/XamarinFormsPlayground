@@ -31,5 +31,9 @@
 
         ViewDescriptor GetStoragePageViewDescriptor();
 
+        ViewDescriptor GetTabPageViewDescriptor();
+
+        
+
     }
 }

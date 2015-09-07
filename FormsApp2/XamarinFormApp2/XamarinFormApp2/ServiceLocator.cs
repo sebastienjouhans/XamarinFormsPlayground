@@ -45,6 +45,11 @@ namespace XamarinFormApp2
         public StoragePageViewModel StoragePageViewModel
         {
             get { return this.globalContainer.Resolve<StoragePageViewModel>(); }
+        }
+
+        public TabPageViewModel TabPageViewModel
+        {
+            get { return this.globalContainer.Resolve<TabPageViewModel>(); }
         } 
         
 
@@ -67,8 +72,8 @@ namespace XamarinFormApp2
             container.RegisterType<TheNextViewModel, TheNextViewModel>();
             container.RegisterType<ListPageViewModel, ListPageViewModel>();
             container.RegisterType<StoragePageViewModel, StoragePageViewModel>();
+            container.RegisterType<TabPageViewModel, TabPageViewModel>();
         }
-
     }
 
 
