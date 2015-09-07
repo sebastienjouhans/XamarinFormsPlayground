@@ -132,6 +132,7 @@
     <Content Include="Properties\AndroidManifest.xml" />
     <AndroidResource Include="Resources\drawable\AppbarIconSave.png" />
     <AndroidResource Include="Resources\values\Styles.xml" />
+    <AndroidResource Include="Resources\drawable\red_button.xml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\XamarinFormApp2\XamarinFormApp2.csproj">

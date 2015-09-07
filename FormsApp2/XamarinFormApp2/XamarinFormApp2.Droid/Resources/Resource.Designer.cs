@@ -57,6 +57,9 @@ namespace XamarinFormApp2.Droid
 			// aapt resource value: 0x7f020002
 			public const int monoandroidsplash = 2130837506;
 			
+			// aapt resource value: 0x7f020003
+			public const int red_button = 2130837507;
+			
 			static Drawable()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
@@ -92,8 +95,11 @@ namespace XamarinFormApp2.Droid
 			// aapt resource value: 0x7f040000
 			public const int CustomTheme = 2130968576;
 			
+			// aapt resource value: 0x7f040002
+			public const int Mono_Android_Theme_Splash = 2130968578;
+			
 			// aapt resource value: 0x7f040001
-			public const int Mono_Android_Theme_Splash = 2130968577;
+			public const int button_text = 2130968577;
 			
 			static Style()
 			{
