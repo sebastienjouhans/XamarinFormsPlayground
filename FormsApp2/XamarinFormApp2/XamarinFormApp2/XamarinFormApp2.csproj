@@ -55,7 +55,10 @@
     <Compile Include="Controls\SomeControl.xaml.cs">
       <DependentUpon>SomeControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Converters\NonNullToBooleanConverter.cs" />
+    <Compile Include="Data\MonkeyData.cs" />
     <Compile Include="Entities\Country.cs" />
+    <Compile Include="Entities\Monkey.cs" />
     <Compile Include="Entities\TestData.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="Interfaces\IMessageBoxService.cs" />
