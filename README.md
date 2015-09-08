@@ -17,4 +17,5 @@ A collection of projects for Testing Xamarin Forms
 * activity indicator
 * custom button renderer with custom press state for Android and WP
 * storage service read/write text files locally making use of PCL storage 
+* tab navigation test
 
